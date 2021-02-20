@@ -1,0 +1,14 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 47: expected statement.
+    Jump choice_begin
+                     ^
+
+File "game/script.rpy", line 49: expected statement.
+    Jump choice_end
+                   ^
+
+Ren'Py Version: Ren'Py 7.4.2.1292
+Sat Feb 20 01:34:56 2021
