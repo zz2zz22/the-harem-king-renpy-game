@@ -104,9 +104,18 @@ label start:
         p "Thôi thôi con xin. Đi luôn dùm con một cái."
         hide aisha uniform normal
         with moveoutright
-        p "\*Cái điện thoại nát này thì có gì ghê gớm trời?"
+        "{i}[a] sau khi nói xong thì chạy đi thật nhanh vào dòng người tấp nập ngoài phố.{i}"
+        "{i}Tôi đứng nhìn chiếc điện thoại cũ trong tay thở dài, tôi vừa kiểm tra chiếc điện thoại vừa xoay người đi ra khỏi con hẻm.{i}"
         p "Haizz...Nay ra đường không coi ngày cái là gặp chuyện gì đâu không thôi."
-        "{i}Vừa bước ra khỏi con hẻm, tôi đã bị truck-kun hun một phát nhẹ nhàng và nhập viện trong trạng thái bất tỉnh nhân cmn sự ngay sau đó.{i}"
+        p "\*Cái điện thoại nát này thì có gì ghê gớm trời?"
+
+
+        play sound 'audio/punch.opus'
+        show truck hit:
+            xalign 0.5
+            yalign 0.5
+        with hpunch
+        "{i}Khi đang mải mê xem xét chiếc điện thoại, tôi đã bị truck-kun hun một phát nhẹ nhàng và bất tỉnh ngay sau đó.{i}"
 
 
     return

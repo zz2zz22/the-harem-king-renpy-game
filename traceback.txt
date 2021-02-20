@@ -1,15 +1,15 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <'MatrixColor' <'Image' u'imagedissolve circlewipe.png'> (0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1)>:
-  File "game/script.rpy", line 40, in script
-    with circlewipe
-IOError: Couldn't find file 'imagedissolve circlewipe.png'.
+While running game code:
+  File "game/script.rpy", line 114, in script
+    with hpunch
+IOError: Couldn't find file 'game/audio/punch.opus'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 40, in script
-    with circlewipe
+  File "game/script.rpy", line 114, in script
+    with hpunch
   File "renpy/ast.py", line 1397, in execute
     renpy.exports.with_statement(trans, paired)
   File "renpy/exports.py", line 1637, in with_statement
@@ -18,35 +18,23 @@ Full traceback:
     clear=clear)
   File "renpy/display/core.py", line 3007, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3517, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "renpy/display/core.py", line 2377, in draw_screen
-    renpy.config.screen_height,
-  File "render.pyx", line 492, in renpy.display.render.render_screen
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 751, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/transition.py", line 514, in render
-    image = render(self.image, width, height, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/im.py", line 607, in render
-    return cache.get(self, render=True)
-  File "renpy/display/im.py", line 271, in get
-    surf = image.load()
-  File "renpy/display/im.py", line 1308, in load
-    surf = cache.get(self.image)
-  File "renpy/display/im.py", line 271, in get
-    surf = image.load()
-  File "renpy/display/im.py", line 651, in load
-    filelike = renpy.loader.load(self.filename)
+  File "renpy/display/core.py", line 3700, in interact_core
+    renpy.audio.audio.periodic()
+  File "renpy/audio/audio.py", line 1101, in periodic
+    raise_(exc[0], exc[1], exc[2])
+  File "renpy/audio/audio.py", line 1079, in periodic_thread_main
+    periodic_pass()
+  File "renpy/audio/audio.py", line 1021, in periodic_pass
+    c.periodic()
+  File "renpy/audio/audio.py", line 487, in periodic
+    topf = load(self.file_prefix + filename + self.file_suffix)
+  File "renpy/audio/audio.py", line 69, in load
+    rv = renpy.loader.load(fn)
   File "renpy/loader.py", line 798, in load
     raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'imagedissolve circlewipe.png'.
+IOError: Couldn't find file 'game/audio/punch.opus'.
 
 Windows-10-10.0.19041
 Ren'Py 7.4.2.1292
 The Harem King 0.0.1a
-Sat Feb 20 15:45:25 2021
+Sat Feb 20 18:25:13 2021
