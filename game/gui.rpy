@@ -424,8 +424,8 @@ init python:
     if renpy.variant("small"):
 
         ## Font sizes.
-        gui.text_size = 30
-        gui.name_text_size = 36
+        gui.text_size = 26
+        gui.name_text_size = 34
         gui.notify_text_size = 25
         gui.interface_text_size = 30
         gui.button_text_size = 30
@@ -469,6 +469,3 @@ init python:
 
         gui.nvl_button_width = 1240
         gui.nvl_button_xpos = 20
-
-
-

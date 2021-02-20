@@ -7,6 +7,10 @@ define y = Character("Yuko", color="ff3399")
 define a = Character("Aisha")
 define p = Character("[player_name]", color="#00dd00")
 
+# transitions
+define circlewipe = ImageDissolve("imagedissolve circlewipe.png", 1.0, 8)
+define circleirisout = ImageDissolve("imagedissolve circleiris.png", 1.0, 8)
+
 
 # The game starts here.
 
@@ -19,17 +23,21 @@ label start:
 
     scene bg room
 
-    $ player_name = renpy.input("Nhập tên vào đi ku !\n{i}Nếu bỏ trống thì sẽ dùng tên mặc định là \"Phế vật\".{i}")
+    $ player_name = renpy.input("Nhập tên vào đi ku !\n{size=-5}{i}Nếu bỏ trống thì sẽ dùng tên mặc định là \"Shirogane\".{i}{/size}")
     if player_name == "":
-        $ player_name = "Phế vật"
+        $ player_name = "Shirogane"
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
     # These display lines of dialogue.
-
+    show bg school hall
+    with fade
     "{i}Tôi, [p] là một học sinh trung học bình thường không có gì nổi bật, từ ngoại hình cho đến đầu óc đều gói gọn trong chữ {b}BÌNH THƯỜNG{b}{i}."
-    "{i}Là một người ý thức được bản thân mình ra sao tôi đã chuẩn bị sẵn sàng từ rất lâu cho một cuộc sống trung học buồn tẻ cô đơn. \n     Chuyện đời thằng dev (Q w Q){i}"
+    "{i}Là một người ý thức được bản thân mình ra sao tôi đã chuẩn bị sẵn sàng từ rất lâu cho một cuộc sống trung học buồn tẻ cô đơn. \n {size=-5}\*Chuyện đời thằng dev (Q w Q)\*{/size}{i}"
+
+    show bg street shopping
+    with circlewipe
     "{i}Như mọi ngày, sau khi trải qua những tiết học vô vị, tôi men theo cung đường quen thuộc để đến Trần Duy Hưng ngắm những \"tâm hồn\" mơn mởn.{i}"
     p "Hôm nay sao không thấy \"em\" nào vậy ta ?"
     "{i}Sau một hồi dò xét thì tôi đã phát hiện một cặp bưởi 5 roi to facking wow shiet, tôi lấy điện thoại ra để chuẩn bị lưu giữ tài liệu \"học tập\"{i}"
@@ -38,6 +46,7 @@ label start:
 
     "???" "Au..au..đau..quá"
     show aisha uniform akward
+    with dissolve
     "{i}Trước mắt tôi là một cô bé tiểu học, cô bé thở gấp mồ hôi nhễ nhại như thể vừa chịc...à không như đang chạy trốn vậy.{i}"
     show aisha uniform rush
     "???" "Ahh! Em xin lỗi nhưng em đang bị đuổi theo, giúp em với!"
@@ -50,15 +59,15 @@ label start:
             jump choice_end
 
     label choice_end:
-        "{b}Vãi cả cuz cắt cu đi bro :<{b} \n Lời khuyên của dev : Hãy nghe con trym, đừng nghe lý trí"
+        "{b}Vãi cả cuz cắt cu đi bro :<{b}  \n Lời khuyên của dev : Hãy nghe con trym, đừng nghe lý trí"
         p "Hả hả gì ?"
         "{i}Vì tôi đã do dự nên em ấy đã bị mang đi bởi đám người lạ."
         return
-    # This ends the game.
+        # This ends the game.
     label choice_begin:
-
         "{i}Tôi nắm lấy tay cô bé và bắt đầu chạy thật nhanh đến khu phố mua sắm gần đó và lẫn vào dòng người tấp nập dần tiến vào một con hẻm vắng.{i}"
         show aisha uniform akward
+        with dissolve
         p "Hộc..Hộc...Anh nghĩ mình cắt đuôi được chúng rồi đấy!"
         p "Mà sao chúng lại đuổi theo em thế ?"
         "???" "Chúng đuổi theo em là vì thứ này.."
@@ -94,6 +103,7 @@ label start:
         a "Hẹn gặp lại anh [p]."
         p "Thôi thôi con xin. Đi luôn dùm con một cái."
         hide aisha uniform normal
+        with moveoutright
         p "\*Cái điện thoại nát này thì có gì ghê gớm trời?"
         p "Haizz...Nay ra đường không coi ngày cái là gặp chuyện gì đâu không thôi."
         "{i}Vừa bước ra khỏi con hẻm, tôi đã bị truck-kun hun một phát nhẹ nhàng và nhập viện trong trạng thái bất tỉnh nhân cmn sự ngay sau đó.{i}"
