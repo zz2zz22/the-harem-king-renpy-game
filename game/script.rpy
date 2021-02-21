@@ -2,14 +2,17 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-
 define y = Character("Yuko", color="ff3399")
+define h = Character("Haruna", color="ff3399")
 define a = Character("Aisha")
 define p = Character("[player_name]", color="#00dd00")
+define i = Character("Ires", color="ff3399")
 
 # transitions
+define slow_dissolve = Dissolve(2.0)
 define circlewipe = ImageDissolve("imagedissolve circlewipe.png", 1.0, 8)
 define circleirisout = ImageDissolve("imagedissolve circleiris.png", 1.0, 8)
+define slow_circleirisout = ImageDissolve("imagedissolve circleiris.png", 2.0, 8)
 
 
 # The game starts here.
@@ -40,7 +43,7 @@ label start:
     with circlewipe
     "{i}Như mọi ngày, sau khi trải qua những tiết học vô vị, tôi men theo cung đường quen thuộc để đến Trần Duy Hưng ngắm những \"tâm hồn\" mơn mởn.{i}"
     p "Hôm nay sao không thấy \"em\" nào vậy ta ?"
-    "{i}Sau một hồi dò xét thì tôi đã phát hiện một cặp bưởi 5 roi to facking wow shiet, tôi lấy điện thoại ra để chuẩn bị lưu giữ tài liệu \"học tập\"{i}"
+    "{i}Sau một hồi dò xét thì tôi đã phát hiện một cặp bưởi năm roi chuẩn giống Vĩnh Long, tôi lấy điện thoại ra để chuẩn bị lưu giữ tài liệu \"học tập\"{i}"
     "{i}Khi đang mải mê ngắm nhìn và tìm góc đẻ chụp ảnh cặp bưởi ấy, tôi đã vô tình va trúng thứ gì đó.{i}"
 
 
@@ -64,8 +67,11 @@ label start:
         "{i}Vì tôi đã do dự nên em ấy đã bị mang đi bởi đám người lạ."
         return
         # This ends the game.
+
     label choice_begin:
         "{i}Tôi nắm lấy tay cô bé và bắt đầu chạy thật nhanh đến khu phố mua sắm gần đó và lẫn vào dòng người tấp nập dần tiến vào một con hẻm vắng.{i}"
+        show bg backalley
+        with dissolve
         show aisha uniform akward
         with dissolve
         p "Hộc..Hộc...Anh nghĩ mình cắt đuôi được chúng rồi đấy!"
@@ -105,17 +111,82 @@ label start:
         hide aisha uniform normal
         with moveoutright
         "{i}[a] sau khi nói xong thì chạy đi thật nhanh vào dòng người tấp nập ngoài phố.{i}"
-        "{i}Tôi đứng nhìn chiếc điện thoại cũ trong tay thở dài, tôi vừa kiểm tra chiếc điện thoại vừa xoay người đi ra khỏi con hẻm.{i}"
+        "{i}Tôi đứng nhìn chiếc điện thoại cũ trong tay thở dài, vừa kiểm tra chiếc điện thoại tôi vừa xoay người đi ra khỏi con hẻm.{i}"
         p "Haizz...Nay ra đường không coi ngày cái là gặp chuyện gì đâu không thôi."
-        p "\*Cái điện thoại nát này thì có gì ghê gớm trời?"
+        p "{size=-3}\*Cái điện thoại nát này thì có gì ghê gớm trời ?{/size}"
 
-
-        play sound 'audio/punch.opus'
+        #play sound 'audio/punch.opus'
         show truck hit:
             xalign 0.5
             yalign 0.5
         with hpunch
         "{i}Khi đang mải mê xem xét chiếc điện thoại, tôi đã bị truck-kun hun một phát nhẹ nhàng và bất tỉnh ngay sau đó.{i}"
+        hide truck hit
+        show bg room with slow_dissolve
+
+        "{b}4 ngày sau...{b}"
+
+        show bg hospital room with slow_circleirisout
+        "{i}Sau một thời gian, tôi dần lấy lại ý thức.{i}"
+        show yuko uniform sad with dissolve
+        "???" "Onii-chan! Anh tỉnh rồi!"
+        "{i}Trước mắt tôi chính là Yuko-chan, cô em gái cùng cha khác mẹ của tôi.{i}"
+        p "Urghh ... Yuko-chan ? Đây là đâu ..? Sao anh lại ở đây ?"
+        y "Mồ .. anh đã bị một chiếc xe tải mất lái tông phải đấy, thật may là xe cứu thương đã đến kịp thời và đưa anh đến bệnh viện."
+        y "Sau nhận được cuộc gọi từ phía bệnh viện em đã lập tức chạy đến đây ngay. Anh đã hôn mê 4 ngày rồi đấy."
+        show yuko uniform sad yandere
+        y "Nếu anh xảy ra chuyện gì có lẽ em đã  {size=-10}đi đồ sát cả gia đình thằng tài xế rồi tự sát rồi{/size}."
+        p "Em nói gì cơ ? Anh còn khá chóng mặt nên không nghe rõ..."
+        show yuko uniform smile
+        y "Ah không có gì đâu. Anh nghỉ ngơi đi nhé, thật mừng vì anh đã tỉnh lại."
+        y "Để em đi báo cho mẹ và bác sĩ, bà ấy đang nói chuyện với bác sĩ ở ngoài."
+        hide yuko uniform smile with moveoutleft
+        #show hình điện thoại
+        "{i}Sau khi Yuko đi tôi chợt để ý đến chiếc điện thoại để trên bàn gần đầu giường.{i}"
+        p "{size=-3}\*Nhìn tới cái này là thấy ứa gan. Haizzz... Mặc dù là lolicon nhưng vái trời đừng gặp lại con bé đó.{/size}"
+        p "{size=-3}\*Cái quần này thì có gì đặc biệt nhỉ, chắc khởi động còn không được.{/size}"
+        "{i}Tôi thử khởi động chiếc máy, một âm thanh kì quái phát ra rồi chiếc điện thoại tắt ngúm.{i}"
+        p "VÃIIIII CẢ LOZZZZZZ!!!!"
+        p "Cái củ kec gì thế này ? Con mắm kia đừng để anh mày gặp lại mày..."
+        "Xoạch ..."
+        "{i}Cánh cửa phòng mở tung ra, một người phụ nữ trung niên chạy vào ôm chầm lấy tôi.{i}"
+        "???" "[p] con đã tỉnh lại rồi. Mẹ đã rất lo cho con đấy"
+        "{i}Người phụ nữ này là mẹ kế của tôi - Haruna, bà ấy luôn xem tôi như con ruột của bà vậy. Sau khi bố mất vào hai năm trước, bà luôn phải quán xuyến toàn bộ công việc trong gia đình."
+        h "Khi bác sĩ nói với mẹ con có thể sẽ không tỉnh lại nữa mẹ đã ngất đi đấy. Thật mừng vì con đã qua khỏi."
+        p "Con xin lỗi đã làm mẹ lo lắng."
+        h "Không sao đâu [p]-kun. Con tỉnh dậy là tốt rồi."
+        p "Vân..."
+        "{i}Đột nhiên trước mặt tôi xuất hiện một dòng chữ. {vspace=10}{space=40}{b}\"Bạn có muốn thôi miên mục tiêu trước mặt không ?\"{/b}{i}"
+        p "{size=-3}\*Nà ní ... thôi miên ? ... really ?{/size}"
+        p "{size=-3}\*Vãi cuz cái gì đây ?{/size}"
+        h "[p] con sao thế ?"
+        p "Ah không có gì đâu con chỉ hơi mệt thôi."
+        h "Thế con nghỉ ngơi đi, mẹ chợt nhớ còn một số chuyện phải làm, Yuko cũng đã báo bác sĩ rồi họ sẽ đến kiểm tra sớm thôi."
+#add hình yuko
+        h "Yuko về thôi con, để anh hai nghỉ ngơi."
+        y "Hể con muốn ở với anh thêm một tí nữa được không mẹ ?"
+        h "Thôi nào anh con chỉ mới tỉnh lại thôi trong người còn rất mệt."
+        y "Vâng...con hiểu rồi. {w}Em về nha anh mai em lại đến. {w}Bye bye."
+        h "Mẹ cũng về đây. Con nghỉ ngơi nhé."
+
+        "???" "{i}Em với mẹ chú ngon nhể ?{i}"
+        p "WTF thằng nào đấy ?"
+        "???" "À quên mất chưa giới thiệu nhỉ ? {w}Bố là Ires, thần tình yêu."
+        p "{size=-3}\*Quắc đờ hợi thằng điên nào đây ? Không lẽ xe tông não mình có vấn đề rồi."
+        i "Điên điên con kec, nói ai điên đấy ?"
+        p "Đù sao ông đọc được suy nghĩ của tui."
+        i "Nãy giờ bố đang nói chuyện với mày qua suy nghĩ đó nói cách khác là bố đang trong đầu mày đó thằng não bò."
+        p "Chết bà mình ảo cmn tưởng rồi !"
+        i "Haizz .. bó tay.{w}Nói chung bố là thần tình yêu trú trong cái điện thoại mày đang cầm ấy."
+        i "Khi mày bật nguồn thì bố cũng từ đó chui vô đầu mày. Hiểu chưa ?"
+        p "À như ký sinh trùng á hả ?"
+        i "Mã cha mày ký sinh trùng cái quần gì. Trắng ra từ bây giờ mày có thể sử dụng một phần năng lực của bố, nhớ cái bảng chữ nãy xuất hiện không ?"
+        i "Đó là một phần năng lực của bố - Thôi miên chi thuật. Nó cho mày điểu khiển hành động hoặc thay đổi ký ức, suy nghĩ của một đối tượng mày đang nhìn vào."
+        p "Ôi vãi cái năng lực buff cả tấn cheat này là thật à ?"
+        i "Ừ từ lúc bố nhập vào mày thì mày đã có khế ước rồi nên cứ dùng thoải mái đi, thấy mày cũng tội nghiệp mặt vầy gái nào thèm ngó."
+        p "Kệ cha tui."
+        p "{size=-3}\*Có cái này thì đời mình nở hoa cmnr. Cảm ơn Aisha, đổi được cái điện thoại này thì anh lời vc rồi.{/size}"
+        p "Đã tới lúc bố mày tỏa sáng rồi. Hehe boizzz"
 
 
     return
