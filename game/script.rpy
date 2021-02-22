@@ -140,7 +140,7 @@ label start:
         show yuko uniform smile
         y "Ah không có gì đâu. Anh nghỉ ngơi đi nhé, thật mừng vì anh đã tỉnh lại."
         y "Để em đi báo cho mẹ và bác sĩ, bà ấy đang nói chuyện với bác sĩ ở ngoài."
-        hide yuko uniform smile with moveoutleft
+        hide yuko uniform smile with moveoutright
         #show hình điện thoại
         "{i}Sau khi Yuko đi tôi chợt để ý đến chiếc điện thoại để trên bàn gần đầu giường.{i}"
         p "{size=-3}\*Nhìn tới cái này là thấy ứa gan. Haizzz... Mặc dù là lolicon nhưng vái trời đừng gặp lại con bé đó.{/size}"
@@ -149,27 +149,39 @@ label start:
         p "VÃIIIII CẢ LOZZZZZZ!!!!"
         p "Cái củ kec gì thế này ? Con mắm kia đừng để anh mày gặp lại mày..."
         "Xoạch ..."
+        show haruna suit sad at left with moveinright
+        show yuko uniform normal at right with moveinright
         "{i}Cánh cửa phòng mở tung ra, một người phụ nữ trung niên chạy vào ôm chầm lấy tôi.{i}"
         "???" "[p] con đã tỉnh lại rồi. Mẹ đã rất lo cho con đấy"
         "{i}Người phụ nữ này là mẹ kế của tôi - Haruna, bà ấy luôn xem tôi như con ruột của bà vậy. Sau khi bố mất vào hai năm trước, bà luôn phải quán xuyến toàn bộ công việc trong gia đình."
         h "Khi bác sĩ nói với mẹ con có thể sẽ không tỉnh lại nữa mẹ đã ngất đi đấy. Thật mừng vì con đã qua khỏi."
         p "Con xin lỗi đã làm mẹ lo lắng."
+        show haruna suit normal at left
         h "Không sao đâu [p]-kun. Con tỉnh dậy là tốt rồi."
         p "Vân..."
         "{i}Đột nhiên trước mặt tôi xuất hiện một dòng chữ. {vspace=10}{space=40}{b}\"Bạn có muốn thôi miên mục tiêu trước mặt không ?\"{/b}{i}"
         p "{size=-3}\*Nà ní ... thôi miên ? ... really ?{/size}"
         p "{size=-3}\*Vãi cuz cái gì đây ?{/size}"
+        show haruna suit consider at left
         h "[p] con sao thế ?"
         p "Ah không có gì đâu con chỉ hơi mệt thôi."
+        show haruna suit normal at left
         h "Thế con nghỉ ngơi đi, mẹ chợt nhớ còn một số chuyện phải làm, Yuko cũng đã báo bác sĩ rồi họ sẽ đến kiểm tra sớm thôi."
-#add hình yuko
         h "Yuko về thôi con, để anh hai nghỉ ngơi."
+        show yuko uniform sad at right
         y "Hể con muốn ở với anh thêm một tí nữa được không mẹ ?"
         h "Thôi nào anh con chỉ mới tỉnh lại thôi trong người còn rất mệt."
-        y "Vâng...con hiểu rồi. {w}Em về nha anh mai em lại đến. {w}Bye bye."
+        y "Vâng...con hiểu rồi."
+        show yuko uniform smile at right
+        y "Em về nha anh, mai em lại đến. Bye bye."
+        show haruna suit smile at left
         h "Mẹ cũng về đây. Con nghỉ ngơi nhé."
+        hide haruna suit smile with dissolve
+        hide yuko uniform smile with dissolve
 
-        "???" "{i}Em với mẹ chú ngon nhể ?{i}"
+        #Bắt đầu scene 2
+        "..."
+        "???" "Em với mẹ chú ngon nhể ?"
         p "WTF thằng nào đấy ?"
         "???" "À quên mất chưa giới thiệu nhỉ ? {w}Bố là Ires, thần tình yêu."
         p "{size=-3}\*Quắc đờ hợi thằng điên nào đây ? Không lẽ xe tông não mình có vấn đề rồi."
@@ -183,10 +195,9 @@ label start:
         i "Mã cha mày ký sinh trùng cái quần gì. Trắng ra từ bây giờ mày có thể sử dụng một phần năng lực của bố, nhớ cái bảng chữ nãy xuất hiện không ?"
         i "Đó là một phần năng lực của bố - Thôi miên chi thuật. Nó cho mày điểu khiển hành động hoặc thay đổi ký ức, suy nghĩ của một đối tượng mày đang nhìn vào."
         p "Ôi vãi cái năng lực buff cả tấn cheat này là thật à ?"
-        i "Ừ từ lúc bố nhập vào mày thì mày đã có khế ước rồi nên cứ dùng thoải mái đi, thấy mày cũng tội nghiệp mặt vầy gái nào thèm ngó."
-        p "Kệ cha tui."
-        p "{size=-3}\*Có cái này thì đời mình nở hoa cmnr. Cảm ơn Aisha, đổi được cái điện thoại này thì anh lời vc rồi.{/size}"
-        p "Đã tới lúc bố mày tỏa sáng rồi. Hehe boizzz"
+        i "Ừ từ lúc bố nhập vào mày thì mày đã có khế ước rồi nên cứ dùng thoải mái đi, thấy mày cũng tội nghiệp mặt vầy gái nào thèm ngó nên bố lập khế ước luôn, biết ơn đi."
+        p "Mặt tui sao kệ cha tui."
+        p "{size=-3}\*Có cái này thì đời mình nở hoa cmnr. Cảm ơn Aisha-chan, đổi được cái điện thoại này thì anh lời vc rồi.{/size}"
+        p "Nếu cái này là thật thì đã tới lúc bố mày tỏa sáng rồi. Hehe boizzz."
 
-
-    return
+    return #này là return end game
