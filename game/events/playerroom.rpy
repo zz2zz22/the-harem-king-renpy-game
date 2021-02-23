@@ -7,7 +7,7 @@ screen roommenu:
         hotspot (5, 303, 350, 235) action Jump("computer") alt "Computer"
         hotspot (1043, 124, 231, 109) action Jump("harem") alt "Harem"
         hotspot (1062, 29, 211, 92) action Jump("map") alt "Map"
-        hotspot (1177, 621, 93, 92) action Jump("preferences") alt "Preferences"
+        hotspot (1177, 621, 93, 92) action ShowMenu('preferences')
 label room_menu:
     call screen roommenu
 
@@ -18,10 +18,8 @@ label bed:
 label computer:
     show home config
     "Chức năng máy tính chưa được thiết kế."
+    jump room_menu
 label harem:
-    pass
+    jump harem_menu
 label map:
     pass
-
-label imagemap_done:
-    p "Anyway..."

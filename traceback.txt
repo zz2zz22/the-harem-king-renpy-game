@@ -1,22 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/events/introscript.rpy", line 172, in script
-    jump roommenu
-ScriptError: could not find label 'roommenu'.
+  File "game/events/playerroom.rpy", line 29, in script
+    return
+Exception: Could not find return label (u'game/script.rpy', 1614026779, 10).
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/events/introscript.rpy", line 172, in script
-    jump roommenu
-  File "renpy/ast.py", line 1711, in execute
-    rv = renpy.game.script.lookup(target)
-  File "renpy/script.py", line 900, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'roommenu'.
+  File "game/events/playerroom.rpy", line 29, in script
+    return
+  File "renpy/ast.py", line 1521, in execute
+    next_node(renpy.game.context().lookup_return(pop=True))
+  File "renpy/execution.py", line 710, in lookup_return
+    raise Exception("Could not find return label {!r}.".format(self.return_stack[-1]))
+Exception: Could not find return label (u'game/script.rpy', 1614026779, 10).
 
 Windows-10-10.0.19041
 Ren'Py 7.4.2.1292
 The Harem King 0.0.1a
-Tue Feb 23 16:19:37 2021
+Tue Feb 23 18:00:16 2021
