@@ -13,7 +13,7 @@ screen haremmenu:
 screen the_img(img):
     add img at left
 label harem_menu:
-    call screen haremmenu
+    call screen haremmenu with dissolve
 label haruna:
     pass
     jump room_menu
