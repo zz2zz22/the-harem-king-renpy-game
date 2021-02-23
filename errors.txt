@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/events/playerroom.rpy", line 12: expected 'image_name_component' not found.
-    show "home config"
-         ^
+File "game/events/haremselection.rpy", line 15: u'show' is not a keyword argument or valid child for the screen statement.
+    show img with dissolve
+        ^
 
 Ren'Py Version: Ren'Py 7.4.2.1292
-Tue Feb 23 16:21:42 2021
+Wed Feb 24 00:23:20 2021
