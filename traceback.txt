@@ -1,32 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 158, in script
-    "{i}Đột nhiên trước mặt tôi xuất hiện một dòng chữ. [vspace]Bạn có muốn thôi miên mục tiêu trước mặt không {i}?"
-KeyError: u'vspace'
+  File "game/events/introscript.rpy", line 172, in script
+    jump roommenu
+ScriptError: could not find label 'roommenu'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 158, in script
-    "{i}Đột nhiên trước mặt tôi xuất hiện một dòng chữ. [vspace]Bạn có muốn thôi miên mục tiêu trước mặt không {i}?"
-  File "renpy/ast.py", line 715, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "renpy/exports.py", line 1384, in say
-    who(what, *args, **kwargs)
-  File "renpy/character.py", line 1164, in __call__
-    what = what_pattern.replace("[what]", sub(what, translate=True))
-  File "renpy/character.py", line 1153, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "renpy/substitutions.py", line 270, in substitute
-    s = formatter.vformat(s, (), kwargs)
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 563, in vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 585, in _vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 646, in get_field
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 605, in get_value
-KeyError: u'vspace'
+  File "game/events/introscript.rpy", line 172, in script
+    jump roommenu
+  File "renpy/ast.py", line 1711, in execute
+    rv = renpy.game.script.lookup(target)
+  File "renpy/script.py", line 900, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'roommenu'.
 
 Windows-10-10.0.19041
 Ren'Py 7.4.2.1292
 The Harem King 0.0.1a
-Sun Feb 21 01:57:47 2021
+Tue Feb 23 16:19:37 2021

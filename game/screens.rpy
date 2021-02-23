@@ -326,7 +326,7 @@ screen navigation():
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Giúp đỡ") action ShowMenu("help")
+            textbutton _("Hỗ trợ") action ShowMenu("help")
 
         if renpy.variant("pc"):
 
