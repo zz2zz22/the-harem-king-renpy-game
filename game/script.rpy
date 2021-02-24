@@ -18,9 +18,6 @@ label start:
     $ player_name = ""
     $ p_money = 50000
 
-    call imagedef
-
-
     show black
     $ player_name = renpy.input("Nhập tên vào đi ku !\n{size=-5}{i}Nếu bỏ trống thì sẽ dùng tên mặc định là \"Shirogane\".{/i}{/size}")
     if player_name == "":
