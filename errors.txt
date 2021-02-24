@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/events/haremselection.rpy", line 15: u'show' is not a keyword argument or valid child for the screen statement.
-    show img with dissolve
-        ^
+The label harem_menu is defined twice, at
+  File "game/events/haremselection.rpy", line 16 and
+  File "game/events/map.rpy", line 9.
 
 Ren'Py Version: Ren'Py 7.4.2.1292
-Wed Feb 24 00:23:20 2021
+Wed Feb 24 15:19:36 2021

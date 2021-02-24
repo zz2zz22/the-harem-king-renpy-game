@@ -22,5 +22,4 @@ label computer:
 label harem:
     jump harem_menu
 label map:
-    "Chức năng map chưa được thiết kế."
-    jump room_menu
+    jump map_menu
