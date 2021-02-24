@@ -1,7 +1,7 @@
 screen haremmenu:
     imagemap:
-        idle "harem select idle"
-        hover "harem select hover"
+        idle harem_i
+        hover harem_h
 
         hotspot (0, 34, 174, 40) action Jump("h_return")
         hotspot (698, 130, 68, 66) clicked Jump("haruna") hovered ShowTransient("the_img", img="preview haruna.png") unhovered Hide("the_img")

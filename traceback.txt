@@ -1,22 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/events/playerroom.rpy", line 25, in script
-    jump map_menu
-ScriptError: could not find label 'map_menu'.
+  File "game/variables/img_define.rpy", line 6, in script
+    define bg_backalley = Background("bg/bg backalley.png")
+  File "game/variables/img_define.rpy", line 6, in script
+    define bg_backalley = Background("bg/bg backalley.png")
+  File "game/variables/img_define.rpy", line 6, in <module>
+    define bg_backalley = Background("bg/bg backalley.png")
+NameError: name 'Background' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/events/playerroom.rpy", line 25, in script
-    jump map_menu
-  File "renpy/ast.py", line 1711, in execute
-    rv = renpy.game.script.lookup(target)
-  File "renpy/script.py", line 900, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'map_menu'.
+  File "renpy/bootstrap.py", line 326, in bootstrap
+    renpy.main.main()
+  File "renpy/main.py", line 515, in main
+    renpy.game.context().run(node)
+  File "game/variables/img_define.rpy", line 6, in script
+    define bg_backalley = Background("bg/bg backalley.png")
+  File "game/variables/img_define.rpy", line 6, in script
+    define bg_backalley = Background("bg/bg backalley.png")
+  File "renpy/ast.py", line 2164, in execute
+    self.set()
+  File "renpy/ast.py", line 2175, in set
+    value = renpy.python.py_eval_bytecode(self.code.bytecode)
+  File "renpy/python.py", line 2242, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/variables/img_define.rpy", line 6, in <module>
+    define bg_backalley = Background("bg/bg backalley.png")
+NameError: name 'Background' is not defined
 
 Windows-10-10.0.19041
 Ren'Py 7.4.2.1292
 The Harem King 0.0.1a
-Wed Feb 24 15:20:28 2021
+Wed Feb 24 15:48:04 2021

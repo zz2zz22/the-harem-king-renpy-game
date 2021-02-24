@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-The label harem_menu is defined twice, at
-  File "game/events/haremselection.rpy", line 16 and
-  File "game/events/map.rpy", line 9.
+File "game/events/introscript.rpy", line 2: expected 'image_name_component' not found.
+    show "bg_schoolhall" with fade
+         ^
 
 Ren'Py Version: Ren'Py 7.4.2.1292
-Wed Feb 24 15:19:36 2021
+Wed Feb 24 15:50:40 2021
