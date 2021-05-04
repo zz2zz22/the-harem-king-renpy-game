@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/events/introscript.rpy", line 2: expected 'image_name_component' not found.
-    show "bg_schoolhall" with fade
-         ^
+File "game/events/introscript.rpy", line 3: expected statement.
+    {b}Đây chỉ là sản phẩm tưởng tượng hoàn toàn không liên hoan đến bất kỳ cá nhân hay tổ chức nào. Hãy chắc chắn rằng bạn trên 18 tuổi khi chơi trò chơi này.{/b}
+                                                                                                   ^
+
+File "game/events/introscript.rpy", line 5: expected statement.
+    Vào năm 2020, một vụ nổ khu nghiên cứu vũ khí sinh học đã xảy ra và vũ khí sinh học đó làm cho con người mắc một loại bệnh lạ.
+                ^
+
+File "game/events/introscript.rpy", line 6: expected statement.
+    Dịch bệnh này có tốc độ lan truyền cực nhanh, chỉ vỏn vẹn sau vài tháng nó đã quét sạch 97% số đàn ông trên thế giới.
+                                                ^
 
 Ren'Py Version: Ren'Py 7.4.2.1292
-Wed Feb 24 15:50:40 2021
+Mon Apr 12 08:33:25 2021
