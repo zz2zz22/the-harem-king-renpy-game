@@ -7,6 +7,7 @@ define i = Character("Ires", color="ff3399")
 
 #Khởi tạo hiệu ứng chuyển cảnh
 define slow_dissolve = Dissolve(1.0)
+define fast_dissolve = Dissolve(-1.0)
 define circlewipe = ImageDissolve("imagedissolve circlewipe.png", 1.0, 8)
 define circleirisout = ImageDissolve("imagedissolve circleiris.png", 1.0, 8)
 define slow_circleirisout = ImageDissolve("imagedissolve circleiris.png", 2.0, 8)
@@ -19,7 +20,7 @@ label start:
     $ p_money = 50000
 
     show black
-    $ player_name = renpy.input("Nhập tên vào đi ku !\n{size=-5}{i}Nếu bỏ trống thì sẽ dùng tên mặc định là \"Shirogane\".{/i}{/size}")
+    $ player_name = renpy.input("Nhập tên nhân vật muốn đặt: \n{size=-5}{i}Nếu bỏ trống thì sẽ dùng tên mặc định là \"Shirogane\".{/i}{/size}")
     if player_name == "":
         $ player_name = "Shirogane"
     pause 0.5

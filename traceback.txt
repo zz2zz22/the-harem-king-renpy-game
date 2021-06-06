@@ -1,68 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <'Image' u'images\\character\\Haruna\\Suit\\Sad.png'>:
-  File "game/events/introscript.rpy", line 113, in script
-    "{i}Cánh cửa phòng mở tung ra, một người phụ nữ trung niên chạy vào ôm chầm lấy tôi."
-Exception: Backslash in filename, use '/' instead: u'images\\character\\Haruna\\Suit\\Sad.png'
+While running game code:
+  File "game/events/introscript.rpy", line 6, in script
+    "Dịch bệnh này có tốc độ lan truyền cực nhanh, chỉ vỏn vẹn sau vài tuần nó đã quét sạch 98[% số đàn ông trên thế giới."
+Exception: String u'D\u1ecbch b\u1ec7nh n\xe0y c\xf3 t\u1ed1c \u0111\u1ed9 lan truy\u1ec1n c\u1ef1c nhanh, ch\u1ec9 v\u1ecfn v\u1eb9n sau v\xe0i tu\u1ea7n n\xf3 \u0111\xe3 qu\xe9t s\u1ea1ch 98[<renpy.exports.TagQuotingDict object at 0x00000000044f73d0>\u1ed1 \u0111\xe0n \xf4ng tr\xean th\u1ebf gi\u1edbi.' ends with an open format operation.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/events/introscript.rpy", line 113, in script
-    "{i}Cánh cửa phòng mở tung ra, một người phụ nữ trung niên chạy vào ôm chầm lấy tôi."
+  File "game/events/introscript.rpy", line 6, in script
+    "Dịch bệnh này có tốc độ lan truyền cực nhanh, chỉ vỏn vẹn sau vài tuần nó đã quét sạch 98[% số đàn ông trên thế giới."
   File "renpy/ast.py", line 715, in execute
     renpy.exports.say(who, what, *args, **kwargs)
   File "renpy/exports.py", line 1384, in say
     who(what, *args, **kwargs)
-  File "renpy/character.py", line 1179, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "renpy/character.py", line 851, in do_display
-    **display_args)
-  File "renpy/character.py", line 601, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3007, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3517, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "renpy/display/core.py", line 2377, in draw_screen
-    renpy.config.screen_height,
-  File "render.pyx", line 492, in renpy.display.render.render_screen
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 751, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 751, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 751, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/transform.py", line 927, in render
-    return transform_render(self, width, height, st, at)
-  File "accelerator.pyx", line 116, in renpy.display.accelerator.transform_render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/image.py", line 501, in render
-    return wrap_render(self.target, width, height, st, at)
-  File "renpy/display/image.py", line 307, in wrap_render
-    rend = render(child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/im.py", line 607, in render
-    return cache.get(self, render=True)
-  File "renpy/display/im.py", line 271, in get
-    surf = image.load()
-  File "renpy/display/im.py", line 651, in load
-    filelike = renpy.loader.load(self.filename)
-  File "renpy/loader.py", line 789, in load
-    raise Exception("Backslash in filename, use '/' instead: %r" % name)
-Exception: Backslash in filename, use '/' instead: u'images\\character\\Haruna\\Suit\\Sad.png'
+  File "renpy/character.py", line 1164, in __call__
+    what = what_pattern.replace("[what]", sub(what, translate=True))
+  File "renpy/character.py", line 1153, in sub
+    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
+  File "renpy/substitutions.py", line 270, in substitute
+    s = formatter.vformat(s, (), kwargs)
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 563, in vformat
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 572, in _vformat
+  File "renpy/substitutions.py", line 160, in parse
+    raise Exception("String {0!r} ends with an open format operation.".format(s))
+Exception: String u'D\u1ecbch b\u1ec7nh n\xe0y c\xf3 t\u1ed1c \u0111\u1ed9 lan truy\u1ec1n c\u1ef1c nhanh, ch\u1ec9 v\u1ecfn v\u1eb9n sau v\xe0i tu\u1ea7n n\xf3 \u0111\xe3 qu\xe9t s\u1ea1ch 98[<renpy.exports.TagQuotingDict object at 0x00000000044f73d0>\u1ed1 \u0111\xe0n \xf4ng tr\xean th\u1ebf gi\u1edbi.' ends with an open format operation.
 
 Windows-10-10.0.19041
 Ren'Py 7.4.2.1292
 The Harem King 0.0.1a
-Wed Mar 17 13:24:09 2021
+Sun Jun  6 22:01:33 2021
