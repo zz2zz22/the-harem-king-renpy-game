@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/events/introscript.rpy", line 8: choice menuitem expects a non-empty block.
-    "Có !":
-           ^
+File "game/script.rpy", line 11: invalid syntax
+    ImageDissolve(imagedissolve circlewipe, 1.0, 8)
+                                          ^
 
-Ren'Py Version: Ren'Py 7.4.2.1292
-Mon Jun  7 21:01:59 2021
+File "game/script.rpy", line 12: invalid syntax
+    ImageDissolve(imagedissolve circleiris, 1.0, 8)
+                                          ^
+
+File "game/script.rpy", line 13: invalid syntax
+    ImageDissolve(imagedissolve circleiris, 2.0, 8)
+                                          ^
+
+Ren'Py Version: Ren'Py 7.4.5.1648
+Tue Jun  8 12:44:53 2021

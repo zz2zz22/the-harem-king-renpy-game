@@ -1,32 +1,68 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/events/introscript.rpy", line 6, in script
-    "Dịch bệnh này có tốc độ lan truyền cực nhanh, chỉ vỏn vẹn sau vài tuần nó đã quét sạch 98[% số đàn ông trên thế giới."
-Exception: String u'D\u1ecbch b\u1ec7nh n\xe0y c\xf3 t\u1ed1c \u0111\u1ed9 lan truy\u1ec1n c\u1ef1c nhanh, ch\u1ec9 v\u1ecfn v\u1eb9n sau v\xe0i tu\u1ea7n n\xf3 \u0111\xe3 qu\xe9t s\u1ea1ch 98[<renpy.exports.TagQuotingDict object at 0x00000000044f73d0>\u1ed1 \u0111\xe0n \xf4ng tr\xean th\u1ebf gi\u1edbi.' ends with an open format operation.
+While processing text tag {pause} in u'...{pause}Anh Shirogane...'.:
+  File "game/events/introscript.rpy", line 35, in script
+    "...{pause}Anh [player_name]..."
+Exception: Unknown text tag u'pause'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/events/introscript.rpy", line 6, in script
-    "Dịch bệnh này có tốc độ lan truyền cực nhanh, chỉ vỏn vẹn sau vài tuần nó đã quét sạch 98[% số đàn ông trên thế giới."
+  File "game/events/introscript.rpy", line 35, in script
+    "...{pause}Anh [player_name]..."
   File "renpy/ast.py", line 715, in execute
     renpy.exports.say(who, what, *args, **kwargs)
-  File "renpy/exports.py", line 1384, in say
+  File "renpy/exports.py", line 1417, in say
     who(what, *args, **kwargs)
-  File "renpy/character.py", line 1164, in __call__
-    what = what_pattern.replace("[what]", sub(what, translate=True))
-  File "renpy/character.py", line 1153, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "renpy/substitutions.py", line 270, in substitute
-    s = formatter.vformat(s, (), kwargs)
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 563, in vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 572, in _vformat
-  File "renpy/substitutions.py", line 160, in parse
-    raise Exception("String {0!r} ends with an open format operation.".format(s))
-Exception: String u'D\u1ecbch b\u1ec7nh n\xe0y c\xf3 t\u1ed1c \u0111\u1ed9 lan truy\u1ec1n c\u1ef1c nhanh, ch\u1ec9 v\u1ecfn v\u1eb9n sau v\xe0i tu\u1ea7n n\xf3 \u0111\xe3 qu\xe9t s\u1ea1ch 98[<renpy.exports.TagQuotingDict object at 0x00000000044f73d0>\u1ed1 \u0111\xe0n \xf4ng tr\xean th\u1ebf gi\u1edbi.' ends with an open format operation.
+  File "renpy/character.py", line 1219, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "renpy/character.py", line 871, in do_display
+    **display_args)
+  File "renpy/character.py", line 621, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "renpy/ui.py", line 298, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "renpy/display/core.py", line 3213, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "renpy/display/core.py", line 3729, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "renpy/display/core.py", line 2466, in draw_screen
+    renpy.config.screen_height,
+  File "render.pyx", line 492, in renpy.display.render.render_screen
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "renpy/display/layout.py", line 783, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "renpy/display/layout.py", line 783, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "renpy/display/layout.py", line 783, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "renpy/display/screen.py", line 681, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "renpy/display/layout.py", line 783, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "renpy/display/layout.py", line 1190, in render
+    st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "renpy/text/text.py", line 2050, in render
+    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
+  File "renpy/text/text.py", line 608, in __init__
+    self.paragraphs = self.segment(text.tokens, style, renders, text)
+  File "renpy/text/text.py", line 1230, in segment
+    raise Exception("Unknown text tag %r" % text)
+Exception: Unknown text tag u'pause'
 
 Windows-10-10.0.19041
-Ren'Py 7.4.2.1292
+Ren'Py 7.4.5.1648
 The Harem King 0.0.1a
-Sun Jun  6 22:01:33 2021
+Tue Jun  8 12:52:33 2021
