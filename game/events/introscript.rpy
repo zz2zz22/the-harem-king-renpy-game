@@ -41,8 +41,20 @@ label agecheck:
         y "Anh đã ngủ đông 6 năm rồi, khi họ thông báo hôm nay anh sẽ tỉnh lại em và mẹ đã lập tức đến đây."
         p "Anh không nhận ra được em luôn, dù gì cũng đã 6 năm rồi nhỉ."
         p "6 năm qua đã để em và mẹ phải chịu khổ nhiều rồi."
-        show yuko uniform smilewith dissolve
-        y "Không đâu anh. Thật mừng vì anh đã tỉnh lại."
+        show yuko uniform smile with dissolve
+        y "Không đâu anh. Em và mẹ rất vui vì anh đã tỉnh lại."
+        y "Để em ra gọi mẹ, mẹ đang nói chuyện với các bác sĩ phụ trách chăm sóc anh ở ngoài."
+        p "{i}Vậy là mình đã ngủ đông được 6 năm rồi à. Có nghĩa là đã có cách giải quyết cái dịch bệnh kia rồi nhỉ.{/i}"
+        p "{i}...Bố...Mặc dù họ không phải ruột thịt với con nhưng con hứa sẽ chăm sóc tốt cho em và mẹ.{/i}"
+        p "{i}{b}Xoạch{/b}{/i}"
+        anonymous "[player_name]... cuối cùng con cũng tỉnh lại rồi."
+        "Cánh cửa phòng bệnh đột nhiên mở ra và một người phụ nữ trung niên lao đến ôm chầm lấy tôi."
+        p "Vâng, đã để mẹ lo lắng cho con nhiều rồi."
+        show haruna suit smile with dissolve
+        h "Không sao cả, việc con vẫn ổn vẫn là trên hết."
+        "Đây là mẹ kế của tôi - Haruna, mặc dù là một người phụ nữ đã kết hôn 2 lần nhưng bà vẫn giữ được nét quyến rũ mà cánh đàn ông khó có thể nào cưỡng lại được."
+        "Đặc biệt là cái tâm hồn vãi cả chưởng đó, không trách vì sao bố lại bị bà ấy hớp hồn ngay từ lần đầu gặp mặt."
+        "Yuko có vẻ thừa hưởng một chút từ bà ấy nên con bé nhìn khá phát triển so với lứa tuổi của nó."
 
         ##Show nurse pics
 
