@@ -17,7 +17,7 @@ define slow_circleirisout = ImageDissolve("transition_pics/imagedissolve circlei
 label start:
     #Khởi tạo các biến
     $ player_name = ""
-    $ p_money = 500
+    $ p_money = 0
 
     show black
     $ player_name = renpy.input("Nhập tên nhân vật muốn đặt: \n{size=-5}{i}Nếu bỏ trống thì sẽ dùng tên mặc định là \"Shirogane\".{/i}{/size}")
