@@ -9,7 +9,7 @@ screen roommenu:
         hotspot (1062, 29, 211, 92) action Jump("map") alt "Map"
         hotspot (1177, 621, 93, 92) action ShowMenu('preferences')
 label room_menu:
-    call screen roommenu with dissolve
+    call screen roommenu 
 
 label bed:
     show home config
